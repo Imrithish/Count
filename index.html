@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Our love story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --berry:#7a1f4b; --rose:#e84a7f; --soft:#a8607f;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;overflow-x:hidden;position:relative;
+  font-family:"Fredoka",system-ui,sans-serif;color:var(--berry);
+  background:
+    radial-gradient(circle at 12% 8%,#ffe3ec 0,transparent 45%),
+    radial-gradient(circle at 90% 20%,#e9e0ff 0,transparent 42%),
+    radial-gradient(circle at 20% 95%,#ffeccf 0,transparent 45%),
+    radial-gradient(circle at 85% 90%,#d9f4ea 0,transparent 40%),
+    #fff4f6;
+  display:flex;align-items:center;justify-content:center;padding:28px 14px 36px;
+}
+/* polka dots */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;
+  background-image:radial-gradient(#ffc2d4 2px,transparent 2.5px);background-size:34px 34px;opacity:.45}
+.float{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.float span{position:absolute;bottom:-40px;animation:rise linear infinite;opacity:0}
+@keyframes rise{0%{transform:translateY(0) translateX(0) rotate(0);opacity:0}10%{opacity:.85}90%{opacity:.7}100%{transform:translateY(-112vh) translateX(var(--dx)) rotate(25deg);opacity:0}}
+.deco{position:fixed;z-index:0;pointer-events:none;font-size:clamp(2rem,7vw,3.6rem);animation:sway 5s ease-in-out infinite}
+.d1{top:10px;left:8px}.d2{top:14px;right:10px;animation-delay:-2s}.d3{bottom:8px;left:12px;animation-delay:-1s}.d4{bottom:12px;right:12px;animation-delay:-3s}
+@keyframes sway{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+.twinkle{position:fixed;z-index:0;pointer-events:none;color:#ffb703;animation:tw 2.4s ease-in-out infinite}
+@keyframes tw{0%,100%{transform:scale(.6);opacity:.4}50%{transform:scale(1.2);opacity:1}}
+
+main{position:relative;z-index:1;width:100%;max-width:860px;text-align:center}
+.bighrt{width:clamp(84px,22vw,120px);height:auto;margin:0 auto 6px;display:block;animation:beat 1.2s ease-in-out infinite;filter:drop-shadow(0 8px 14px rgba(232,74,127,.35))}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.14)}30%{transform:scale(1)}45%{transform:scale(1.09)}}
+h1{font-family:"Pacifico",cursive;font-weight:400;font-size:clamp(2.2rem,9vw,4rem);margin:4px 0 10px;color:var(--rose);line-height:1.15;text-shadow:3px 3px 0 #fff}
+.chip{display:inline-block;background:#fff;border:2px dashed #ffb3c8;border-radius:999px;padding:8px 20px;font-weight:500;font-size:clamp(.9rem,3.6vw,1.1rem);color:var(--berry);box-shadow:0 6px 16px rgba(232,74,127,.12)}
+.lead{margin:18px 0 26px;color:var(--soft);font-size:clamp(1rem,3.8vw,1.2rem)}
+
+.clock{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (min-width:700px){.clock{grid-template-columns:repeat(4,1fr);gap:18px}}
+.card{position:relative;border:4px solid #fff;border-radius:28px;padding:34px 8px 20px;box-shadow:0 10px 0 var(--sh),0 18px 30px rgba(122,31,75,.12);transform:rotate(var(--r));transition:transform .25s}
+.card:hover{transform:rotate(0) translateY(-4px)}
+.c1{background:#ffd3e0;--sh:#f7a8c1;--r:-2deg}
+.c2{background:#ffe6c4;--sh:#f5c88b;--r:1.5deg}
+.c3{background:#e6dcff;--sh:#c4b3f2;--r:-1.5deg}
+.c4{background:#d3f3e4;--sh:#9fdcc0;--r:2deg}
+.ico{position:absolute;top:-20px;left:50%;transform:translateX(-50%);width:44px;height:44px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:22px;box-shadow:0 4px 10px rgba(122,31,75,.18)}
+.n{display:block;font-weight:600;font-size:clamp(2.2rem,11vw,3.8rem);line-height:1.05;font-variant-numeric:tabular-nums;word-break:break-all}
+.u{display:block;margin-top:6px;font-weight:500;font-size:clamp(.9rem,3.6vw,1.1rem);color:var(--soft)}
+.pop{animation:pop .35s ease}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.18)}100%{transform:scale(1)}}
+
+.foot{margin:34px auto 0;display:inline-block;background:var(--rose);color:#fff;border-radius:999px;padding:10px 24px;font-size:clamp(.95rem,3.8vw,1.15rem);font-weight:500;box-shadow:0 8px 0 #c2305f}
+@media (prefers-reduced-motion:reduce){.float{display:none}.bighrt,.deco,.twinkle,.pop{animation:none}}
+</style>
+</head>
+<body>
+<div class="float" id="float" aria-hidden="true"></div>
+<div class="deco d1" aria-hidden="true">🌸</div><div class="deco d2" aria-hidden="true">🌷</div>
+<div class="deco d3" aria-hidden="true">🌷</div><div class="deco d4" aria-hidden="true">🌸</div>
+<div class="twinkle" style="top:22%;left:6%;font-size:22px" aria-hidden="true">✦</div>
+<div class="twinkle" style="top:30%;right:7%;font-size:28px;animation-delay:-1s" aria-hidden="true">✦</div>
+<div class="twinkle" style="bottom:26%;left:9%;font-size:26px;animation-delay:-.6s" aria-hidden="true">✦</div>
+<div class="twinkle" style="bottom:20%;right:6%;font-size:20px;animation-delay:-1.6s" aria-hidden="true">✦</div>
+
+<main>
+  <svg class="bighrt" viewBox="0 0 24 22" aria-hidden="true">
+    <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8fb1"/><stop offset="1" stop-color="#e0316b"/></linearGradient></defs>
+    <path fill="url(#g)" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 2.7 3.5 6.3 3.5c2 0 3.7 1.1 4.7 2.7h2c1-1.6 2.7-2.7 4.7-2.7 3.6 0 5.4 4.800 3.900 8.200C19.500 16.400 12 21 12 21z"/>
+    <ellipse cx="7" cy="7.2" rx="2" ry="1.2" fill="#fff" opacity=".6" transform="rotate(-35 7 7.2)"/>
+  </svg>
+  <h1>Our Love Story</h1>
+  <span class="chip">💌 We said “I love you” on 18 August 2026, 7:20 pm</span>
+  <p class="lead">And every moment since then, I have loved you more</p>
+
+  <div class="clock" role="timer" aria-label="Time since 18 August 2026, 7:20 pm">
+    <div class="card c1"><span class="ico">🌸</span><span class="n" id="d">0</span><span class="u">Days</span></div>
+    <div class="card c2"><span class="ico">⏰</span><span class="n" id="h">0</span><span class="u">Total hours</span></div>
+    <div class="card c3"><span class="ico">✨</span><span class="n" id="m">00</span><span class="u">Minutes</span></div>
+    <div class="card c4"><span class="ico">💗</span><span class="n" id="s">00</span><span class="u">Seconds</span></div>
+  </div>
+
+  <div class="foot">and still counting, forever 💕</div>
+</main>
+
+<script>
+// 18 Aug 2026, 7:20 pm India time (IST, +05:30)
+const START = new Date("2026-08-18T19:20:00+05:30").getTime();
+const $ = id => document.getElementById(id);
+const pad = n => String(n).padStart(2, "0");
+let lastS = -1;
+
+function tick(){
+  const diff = Math.max(0, Math.floor((Date.now() - START) / 1000));
+  $("d").textContent = Math.floor(diff / 86400).toLocaleString("en-IN");
+  $("h").textContent = Math.floor(diff / 3600).toLocaleString("en-IN");
+  $("m").textContent = pad(Math.floor(diff % 3600 / 60));
+  const s = diff % 60;
+  $("s").textContent = pad(s);
+  if (s !== lastS){
+    lastS = s;
+    const el = $("s"); el.classList.remove("pop"); void el.offsetWidth; el.classList.add("pop");
+  }
+}
+tick();
+setInterval(tick, 1000);
+
+// floating hearts
+const box = $("float");
+const bits = ["💗","💖","💕","🩷","💞","🌸"];
+for (let i = 0; i < 16; i++){
+  const e = document.createElement("span");
+  e.textContent = bits[i % bits.length];
+  e.style.left = (Math.random() * 96) + "%";
+  e.style.fontSize = (14 + Math.random() * 20) + "px";
+  e.style.animationDuration = (9 + Math.random() * 10) + "s";
+  e.style.animationDelay = (-Math.random() * 16) + "s";
+  e.style.setProperty("--dx", (Math.random() * 80 - 40) + "px");
+  box.appendChild(e);
+}
+</script>
+</body>
+</html>
